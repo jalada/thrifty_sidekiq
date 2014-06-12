@@ -27,9 +27,9 @@ And then execute:
 1. Remove Sidekiq from your Procfile
 2. In your Unicorn config `before_fork` block:
 
-		```ruby
-	    @thrifty_sidekiq ||= ThriftySidekiq.start!
-	    ```
+	```ruby
+	@thrifty_sidekiq ||= ThriftySidekiq.start!
+	```
 
 Now when your Unicorn server starts, Thrifty Sidekiq will start 1 Sidekiq worker using the command `bundle exec sidekiq`. If you want to use a custom command to start Sidekiq (or a similar worker) pass it in as the first argument to `start!`.
 
