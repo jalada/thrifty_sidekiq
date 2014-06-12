@@ -2,7 +2,7 @@ module ThriftySidekiq
 
   class Supervisor
 
-    def initialize(sidekiq_command='bundle exec sidekiq', auto_start=false)
+    def initialize(sidekiq_command, auto_start=false)
       @sidekiq_command = sidekiq_command
       start! if auto_start
     end

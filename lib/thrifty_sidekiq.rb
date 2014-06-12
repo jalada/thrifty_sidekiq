@@ -6,5 +6,7 @@ require 'thrifty_sidekiq/supervisor'
 # Supervisor -> AssistantSupervisor -> Manager
 
 module ThriftySidekiq
-  # Your code goes here...
+  def self.start!(sidekiq_command='bundle exec sidekiq')
+    Supervisor.new sidekiq_command, true
+  end
 end
